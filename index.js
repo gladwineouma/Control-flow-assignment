@@ -21,40 +21,51 @@ function goodsDeliverySchedule(days) {
     })
 
 }
-
 const days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
 goodsDeliverySchedule(days);
 
 
-// Create a program that loops through an array of book statuses and prints 
-// "Ready to lend" if the status is "available" or "Checked out" if the status is "borrowed".
-
-// function bookStatus(status){
-//     if(status = available){
-//         console.log("Ready to lend")
-//     }else  {
-//         console.log("Checked out")
-//     }
-    
-// }
-
-// sttus 
-
+function bookAvailability(books) {
+    books.forEach((book) => {
+        switch (book) {
+            case "available":
+                console.log("Ready to lend");
+                break;
+            case "checked out":
+                console.log("borrowed");
+                break;
+            default:
+                console.log("Not available")
+        };
 
 
+    }
+    )
+
+}
+
+const books = ["available", "borrowed", "available"];
+bookAvailability(books);
 
 
 
-const age = [19, 19, 23, 15,18];
+
+
+
+
+
+
+
+
+const age = [19, 19, 23, 15, 18];
 function ageScreening(age) {
 
-    for (i = 0; i < age.length; i++)
-    {
-    if (age[i] >= 18) {
-        console.log("Adult");
-    } else {
-        console.log("Minor");
-    };
+    for (i = 0; i < age.length; i++) {
+        if (age[i] >= 18) {
+            console.log("Adult");
+        } else {
+            console.log("Minor");
+        };
     }
 };
 ageScreening(age);
@@ -64,59 +75,87 @@ ageScreening(age);
 
 
 
-//Write a program using a while loop that simulates a countdown of 
-// lives in a game starting from 5 and prints "You have X lives left" 
-// on each loop until it reaches 0.
-
-function livesCountdown(lives){
- let lives = 5;
- while(life <=5){
-    console.log(`You have ${lives} left`);
-lives
- }
+function livesCountdown() {
+    let lives = 5;
+    while (lives > 0) {
+        console.log(`You have ${lives} left`);
+        lives--;
+    }
 }
 livesCountdown()
 
 
-//Using a do...while loop, write a program that loops through an array of 
-// user feedback and prints each comment until the array is empty.
 
 function comments(feedback) {
+    let i = 0;
+    do {
+        console.log(feedback[i]);
+        i++
+    } while (i < feedback.length)
 
 }
+const feedback = ["I need help", "Which services do you offer"]
+comments(feedback)
 
 
-//Write a program that loops through an array of user login statuses and prints 
-// "Welcome back!" if the user is "logged in" or "Please log in" otherwise.
 
 
-function checkStatus(status){
-    status.forEach((status)=>{
-        switch (status){
+function checkStatus(status) {
+    status.forEach((status) => {
+        switch (status) {
             case "logged in":
                 console.log("Welcome back");
                 break;
 
-                default :
-                console.log("Please log in")
+            default:
+                console.log("Please log in");
+                break;
 
 
+        };
+
+    });
+
+};
+
+const status = ["logged in", "not logged in", "logged in"];
+checkStatus(status);
+
+
+
+function ticketPrioritizatation(priorities) {
+    priorities.forEach((priority) => {
+        switch (priority) {
+            case "low":
+                console.log("Low level of priority");
+                break;
+            case "medium":
+                console.log("Medium level of priority");
+                break;
+            case "high":
+                console.log("High level of priority");
+                break
+            default:
+                console.log("Not prioritized at all")
         }
-        
-    })
-
+    }
+    )
 }
 
+const priorities = ["high", "low", "medium", "no ticket"];
+ticketPrioritizatation(priorities);
 
 
-//Write a program that processes an array of support ticket priorities 
-// using a switch statement to print how quickly each one should be addressed 
-// based on whether the priority is "low", "medium", or "high".
-
-//Create a while loop that simulates a quiz countdown from 10 seconds, 
-// printing each number until it reaches 0.
 
 
+function quizCountdown() {
+    let seconds = 10;
+    while (seconds > 0) {
+        console.log(`${seconds}`);
+        seconds--;
+    }
+}
+quizCountdown()
 
 
 
